@@ -39,7 +39,7 @@ def formating(xml):
 
 ## FUNCAO PARA CONECTAR/BAIXAR XML DE UMA ARVORE DE SENSORES ##
 def main(noc):
-	tabela = urllib.request.Request("https://%s/api/table.xml?content=sensors&columns=group,device,sensor,status,message&username=prtgadmin&password=G!ob@l$2o17" % noc)
+	tabela = urllib.request.Request("https://%s/api/table.xml?content=sensors&columns=group,device,sensor,status,message&username=PRTG_USER&password=PRTG_PASSWORD" % noc)
 	gcontext = ssl.SSLContext(ssl.PROTOCOL_TLSv1)
 	tabela_download = urllib.request.urlopen(tabela, context=gcontext)
 	conv = tabela_download.read().decode('utf-8')
@@ -54,8 +54,8 @@ def email(result):
 
 	msg = MIMEMultipart()
 	msg['Subject'] = '[PRTG_BOT] Resumo de Acionadores'
-	msg['From'] = "bot@globalsys.com.br"
-	msg['To'] =  "dba@globalsys.com.br"
+	msg['From'] = "remetente@email.com"
+	msg['To'] =  "destinatario@email.com"
 	file = open('sensores.html','rb')
 	fileMsg = MIMEBase('html','html')
 	fileMsg.set_payload(file.read())
@@ -64,8 +64,8 @@ def email(result):
 	fileMsg.add_header('Content-Disposition','attachment;filename=sensores.html')
 	msg.attach(fileMsg)
 
-	s = smtplib.SMTP('smtp.globalsys.com.br', 587)
-	s.login("prtg@globalsys.com.br", "Gsys@2010")
+	s = smtplib.SMTP('smtp.server.com.br', 587)
+	s.login("login.smtp@server.com.br", "senha")
 	s.send_message(msg)
 	s.quit()
 
@@ -133,21 +133,21 @@ def emailfor(result):
 
 ## BAIXANDO XML DE TODOS OS NOCs ##
 result = (" NOC 1 \n"+
-          formating(main("10.10.1.26:443"))+"\n"+
+          formating(main("127.0.0.1:80"))+"\n"+
           " NOC 2 \n"+
-          formating(main("10.10.1.27:444"))+"\n"+
+          formating(main("127.0.0.1:80"))+"\n"+
           " NOC 3 \n"+
-          formating(main("10.10.1.28:446"))+"\n"+
+          formating(main("127.0.0.1:80"))+"\n"+
           " NOC 4 \n"+
-          formating(main("10.10.1.29:447"))+"\n"+
+          formating(main("127.0.0.1:80"))+"\n"+
           " NOC 5 \n"+
-          formating(main("10.10.1.30:448"))+"\n"+
+          formating(main("127.0.0.1:80"))+"\n"+
           " NOC 6 \n"+
-          formating(main("10.10.1.31:449"))+"\n"+
+          formating(main("127.0.0.1:80"))+"\n"+
           " NOC 7 \n"+
-          formating(main("10.10.1.32:450"))+"\n"+
+          formating(main("127.0.0.1:80"))+"\n"+
           " NOC 8 \n"+
-          formating(main("10.10.1.33:451"))+"\n")
+          formating(main("127.0.0.1:80"))+"\n")
 
 ## FORMATANDO E-MAIL EM HTML ##
 text =  emailfor(result)
