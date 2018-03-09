@@ -3,7 +3,9 @@ Um bot para automatizar ações da ferramenta de monitoramento PRTG.
 
 ## Como usar
 Linha 42: Edite **PRTG_USER** e **PRTG_PASSWORD** passando as credenciais de acesso da ferramenta.
+
 Linha 57: Inserir endereço de e-mail remetente, que irá enviar o relatório (alias ou conta SMTP).
+
 Linha 58: Inserir destinatário. Conta que irá receber o relatório.
 Linha 67: Inserir servidor e porta SMTP.
 Linha 68: Atenticação SMTP.
