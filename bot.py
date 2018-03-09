@@ -7,9 +7,9 @@ from email.mime.base import MIMEBase
 from email.mime.multipart import MIMEMultipart
 from email import encoders
 
-__author__ = "Rodrigo F Lopes, Danilo Moschem | Globalsys Soluções em TI"
+__author__ = "Rodrigo F Lopes e Danilo Moschem"
 __version__ = "1.0.0"
-__email__ = "rodrigo.lopes@globalsys.com.br, danilo.moschem@globalsys.com.br"
+__email__ = "rodrigof.lops@gmail.com, dmoschem@gmail.com"
 
 
 ## FUNCAO PARA FORMATAR XML ##
