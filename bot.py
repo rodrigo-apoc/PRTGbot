@@ -93,19 +93,19 @@ def emailfor(result):
 			grp2 = grp1.split('<')
 			grp3 = str(grp2[0]).strip()
 			final = final + ("<tr bgcolor=%s><td>%s</td>" % (cor,grp3))
-		elif "device" in linha:
+		elif "<device>" in linha:
 			dev0 = linha.split('>')
 			dev1 = str(dev0[1]).strip()
 			dev2 = dev1.split('<')
 			dev3 = str(dev2[0]).strip()
 			final = final + ("<td>%s</td>" % dev3)
-		elif "sensor" in linha:
+		elif "<sensor>" in linha:
 			sen0 = linha.split('>')
 			sen1 = str(sen0[1]).strip()
 			sen2 = sen1.split('<')
 			sen3 = str(sen2[0]).strip()
 			final = final + ("<td>%s</td>" %sen3)
-		elif "status" in linha:
+		elif "<status>" in linha:
 			sta0 = linha.split('>')
 			sta1 = str(sta0[1]).strip()
 			sta2 = sta1.split('<')
@@ -121,7 +121,7 @@ def emailfor(result):
 					color = "#e84040"
 			final = final + ("<td bgcolor=%s>%s</td>" % (color,sta3))
 
-		elif "message_raw" in linha:
+		elif "<message_raw>" in linha:
 			men0 = linha.split('>')
 			men1 = str(men0[1]).strip()
 			men2 = men1.split('<')
