@@ -86,7 +86,7 @@ def emailfor(result):
 		if "NOC" in linha:
 			final = final + ("<tr bgcolor=#242cb7><td align = \"center\" colspan=\"5\"><b><font color='white'>%s</font></b></td></tr>" %linha)
 			final = final + ("<tr bgcolor=#242cb7><td width=\"10%\"><font color='white'>Grupo</font></td><td width=\15%\"><font color='white'>Device</font></td><td width=\"12%\"><font color='white'>Sensor</font></td><td width=\"10%\"><font color='white'>Status\t</font></td><td align = \"center\" width=\"45%\"><font color='white'>Mensagem</font></td></tr>")
-		elif "group" in linha:
+		elif "<group>" in linha:
 			cont = cont + 1 
 			grp0 = linha.split('>')
 			grp1 = str(grp0[1]).strip()
